@@ -1,0 +1,30 @@
+:root {
+  /* Colors */
+  --color-bg: #090909;
+  --color-surface: #141414;
+  --color-card: #1B1B1B;
+
+  --color-gold: #C89B3C;
+  --color-gold-light: #E4C878;
+
+  --color-white: #FFFFFF;
+  --color-text: #D1D5DB;
+  --color-border: rgba(255,255,255,.08);
+
+  /* Radius */
+  --radius-sm:12px;
+  --radius-md:18px;
+  --radius-lg:28px;
+
+  /* Shadows */
+  --shadow-gold:
+      0 10px 40px rgba(200,155,60,.15);
+
+  /* Container */
+
+  --container:1440px;
+
+  /* Transition */
+
+  --transition:.35s ease;
+}

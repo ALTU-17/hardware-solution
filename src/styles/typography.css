@@ -1,0 +1,19 @@
+.heading-xl{
+    @apply text-5xl md:text-6xl xl:text-7xl font-black leading-[1.05];
+}
+
+.heading-lg{
+    @apply text-4xl md:text-5xl xl:text-6xl font-black leading-tight;
+}
+
+.heading-md{
+    @apply text-3xl md:text-4xl font-bold;
+}
+
+.subtitle{
+    @apply uppercase tracking-[8px] text-[#C89B3C] text-xs md:text-sm font-semibold;
+}
+
+.body{
+    @apply text-gray-400 leading-8 text-base;
+}
