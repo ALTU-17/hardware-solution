@@ -20,30 +20,30 @@ import {
 export default function About() {
   const stats = [
     { 
-      end: 250, 
+      end: 300, 
       suffix: "+", 
-      label: "Completed Projects",
+      label: ".Completed Projects",
       icon: Briefcase,
       gradient: "from-blue-500/20 to-purple-500/20"
     },
     { 
-      end: 10, 
+      end: 20, 
       suffix: "+", 
-      label: "Years Experience",
+      label: ".Years Experience",
       icon: Award,
       gradient: "from-amber-500/20 to-orange-500/20"
     },
     { 
       end: 30, 
       suffix: "+", 
-      label: "Premium Brands",
+      label: ".Premium Brands",
       icon: Users,
       gradient: "from-emerald-500/20 to-teal-500/20"
     },
     { 
       end: 100, 
       suffix: "%", 
-      label: "Customer Satisfaction",
+      label: ".Customer Satisfaction",
       icon: Star,
       gradient: "from-rose-500/20 to-pink-500/20"
     },
@@ -67,6 +67,16 @@ export default function About() {
       title: "Advanced Motion Engineering",
       desc: "Hydraulic damping and whisper-quiet soft-close mechanics for effortless daily interaction."
     },
+     {
+    icon: Award,
+    title: "Prior Experience & Market Presence",
+    desc: "Barkha Hardware - The city's most reputed interior hardware store with decades of market presence and unmatched expertise."
+  },
+  {
+    icon: Users,
+    title: "Trusted by Industry Leaders",
+    desc: "From luxury villas to commercial spaces, our legacy of quality has made us the preferred choice for premium hardware solutions."
+  },
     {
       icon: Sliders,
       title: "Bespoke System Tailoring",
@@ -156,6 +166,7 @@ export default function About() {
             <Counter end={stat.end} suffix={stat.suffix} />
           </div>
         </div>
+        
         <p className="relative z-10 mt-2 text-gray-400 text-sm font-medium tracking-wide">
           {stat.label}
         </p>
@@ -165,7 +176,9 @@ export default function About() {
   </div>
 
   {/* Why Hardware Solution Section with Fixed Padding & Enlarged Heading */}
-  <div className="mt-12 border-t border-white/5 pt-12">
+
+<div className="grid grid-cols-1 md:grid-cols-1 gap-8">  
+    <div className="mt-12 border-t border-white/5 pt-12">
     <h3 className="mt-0 text-xl md:text-2xl font-black tracking-wide text-white uppercase mb-8">
       Why Hardware Solution?
     </h3>
@@ -202,7 +215,9 @@ export default function About() {
         <span className="text-gray-300 text-sm leading-relaxed font-medium">{item}</span>
       </div>
     ))}
-  </div>
+  </div> </div>
+
+
 
   {/* CTA Button */}
   {/* <motion.button

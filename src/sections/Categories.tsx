@@ -2,18 +2,31 @@
 
 import { motion } from "framer-motion";
 import Reveal from "../components/animations/Reveal";
-import { ArrowRight, Sparkles, Zap, Shield, Gem, Layers, Settings } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Shield, Gem, Layers, Settings, Settings2Icon, TheaterIcon, Construction, Hammer } from "lucide-react";
+import { MdKitchen } from "react-icons/md";
 
 const categories = [
+    { 
+    name: "Glass Profiles",
+    icon: Gem,
+    description: "Sophisticated glass hardware for contemporary interiors",
+    gradient: "from-blue-500/20 to-cyan-500/20"
+  },
   { 
-    name: "Wardrobe Systems",
+    name: "Modular Wardrobe Systems",
     icon: Layers,
     description: "Customizable luxury wardrobe solutions with premium finishes",
     gradient: "from-purple-500/20 to-pink-500/20"
   },
   { 
-    name: "Kitchen Hardware",
-    icon: Settings,
+    name: "Sliding Systems",
+    icon: Zap,
+    description: "Innovative sliding hardware for seamless space solutions",
+    gradient: "from-indigo-500/20 to-purple-500/20"
+  },
+  { 
+    name: "Modular Kitchen",
+    icon: MdKitchen,
     description: "High-end kitchen fittings and hardware for modern living",
     gradient: "from-amber-500/20 to-orange-500/20"
   },
@@ -23,24 +36,32 @@ const categories = [
     description: "Premium cabinet profiles with elegant design details",
     gradient: "from-emerald-500/20 to-teal-500/20"
   },
-  { 
-    name: "Glass Profiles",
-    icon: Gem,
-    description: "Sophisticated glass hardware for contemporary interiors",
-    gradient: "from-blue-500/20 to-cyan-500/20"
-  },
+
   { 
     name: "Luxury Handles",
     icon: Sparkles,
-    description: "Exquisite handles and pulls for luxury furniture",
+    description: ".Exquisite handles and pulls for luxury furniture",
     gradient: "from-rose-500/20 to-red-500/20"
   },
   { 
-    name: "Sliding Systems",
-    icon: Zap,
-    description: "Innovative sliding hardware for seamless space solutions",
-    gradient: "from-indigo-500/20 to-purple-500/20"
+    name: "Turf",
+    icon: Settings2Icon,
+    description: ".High-grade landscaping turf for elite contemporary spaces",
+    gradient: "from-rose-500/20 to-red-500/20"
   },
+  { 
+    name: "Home Theater",
+    icon: TheaterIcon,
+    description: ".High-end integration hardware for ultimate theater experiences",
+    gradient: "from-emerald-500/20 to-teal-500/20"
+  },
+  { 
+    name: "Renovation",
+    icon: Hammer,
+    description: ".Complete architectural hardware upgrades for interior transformations",
+    gradient: "from-blue-500/20 to-pink-500/20"
+  },
+  
 ];
 
 export default function Categories() {
@@ -125,10 +146,10 @@ export default function Categories() {
               </p>
 
               {/* Arrow indicator */}
-              <div className="relative z-10 mt-6 flex items-center gap-2 text-[#C89B3C] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2">
+              {/* <div className="relative z-10 mt-6 flex items-center gap-2 text-[#C89B3C] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-2">
                 <span className="text-sm font-medium">Explore</span>
                 <ArrowRight className="w-4 h-4" />
-              </div>
+              </div> */}
 
               {/* Decorative number */}
               <div className="absolute top-4 right-4 text-6xl font-black text-white/5 group-hover:text-[#C89B3C]/10 transition-colors duration-500 font-serif">

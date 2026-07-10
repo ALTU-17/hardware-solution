@@ -8,11 +8,14 @@ import {
   MapPin,
   MessageCircle,
   Award,
+  Code2,
+  Contact,
   Shield,
 } from "lucide-react";
 
 import Container from "../components/ui/Container";
 import Button from "../components/ui/Button";
+import { BsInstagram } from "react-icons/bs";
 
 export default function Footer() {
   const scrollTop = () =>
@@ -30,6 +33,11 @@ export default function Footer() {
 
         <div className="rounded-[36px] border border-[#C89B3C]/20 bg-gradient-to-br from-[#121212] to-[#0B0B0B] px-8 py-16 md:px-14 text-center">
 
+          <p className="uppercase tracking-[8px] text-[#C89B3C] text-xs">
+
+           .
+
+          </p>
           <p className="uppercase tracking-[8px] text-[#C89B3C] text-xs">
 
             Premium Interior Hardware
@@ -101,11 +109,13 @@ export default function Footer() {
               Premiume finish guaranteed
             </p>
 
-            <div className="mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-2"> 
+                 <div className="mt-8">
+
 
               <p className="text-white font-semibold">
 
-                Owner
+                Founder:
 
               </p>
 
@@ -116,7 +126,24 @@ export default function Footer() {
               </p>
 
             </div>
+                 <div className="mt-8">
 
+
+              <p className="text-white font-semibold">
+
+                GST Number:
+
+              </p>
+
+              <p className="text-white">
+
+                27LQYPS1012D1ZH
+
+              </p>
+
+            </div>
+  </div>
+           
           </div>
 
           {/* Quick Links */}
@@ -210,10 +237,11 @@ export default function Footer() {
 
               <Info
                 icon={<MapPin size={18} />}
-                text="Aurangabad, Maharashtra"
+                text="Chhatrapati Sambhajinagar (Aurangabad), Maharashtra"
               />
 
-              <a
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-2">  
+                <a
                 href="https://wa.me/919730236100"
                 target="_blank"
                 className="inline-flex items-center gap-3 text-[#C89B3C]"
@@ -224,6 +252,19 @@ export default function Footer() {
                 WhatsApp
 
               </a>
+
+              <a
+                href="https://www.instagram.com/hardwaresolution173?igsh=MTN1ampyOXc4YTFiNw=="
+                target="_blank"
+                className="inline-flex items-center gap-3 text-[#C89B3C]"
+              >
+
+                <BsInstagram size={18}/>
+
+                Instagram
+
+              </a>
+              </div>
 
             </div>
 
@@ -247,17 +288,36 @@ export default function Footer() {
                 <Award size={14} className="text-[#C89B3C]" />
                 Premium Quality
               </span>
+             
+              
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-gray-500 hover:text-[#C89B3C] text-sm transition-colors">
+           <div className="flex items-center gap-4 text-xs text-gray-600">
+            {/* <Link href="/privacy" className="text-gray-500 hover:text-[#C89B3C] text-sm transition-colors">
               Privacy
             </Link>
             <span className="w-px h-4 bg-white/10"></span>
             <Link href="/terms" className="text-gray-500 hover:text-[#C89B3C] text-sm transition-colors">
               Terms
-            </Link>
+            </Link> */}
+
+<span className="flex items-center gap-1">
+                <Code2 size={14} className="text-[#C89B3C]" />
+                Developed by: ALTAMASH SHAIKH
+              </span>
+              <span className="w-px h-4 bg-white/10"></span>
+
+              <span className="flex items-center gap-1">
+                <Phone size={14} className="text-[#C89B3C]" />
+                Developer contact no: +91 9766220055 
+              </span>
+              <span className="w-px h-4 bg-white/10"></span>
+              <span className="flex items-center gap-1">
+                <Mail size={14} className="text-[#C89B3C]" />
+                 skaltamsh789@gmail.com
+              </span>
+
             <button
               onClick={scrollTop}
               className="h-12 w-12 rounded-full border border-[#C89B3C]/20 hover:bg-[#C89B3C] hover:text-black transition-all duration-300 flex items-center justify-center group hover:shadow-lg hover:shadow-[#C89B3C]/20"

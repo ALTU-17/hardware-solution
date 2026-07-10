@@ -24,6 +24,12 @@ import dynamic from "next/dynamic";
 const FeaturedShowcase = dynamic(
   () => import("../sections/FeaturedShowcase")
 );
+const FeaturedShowcase2 = dynamic(
+  () => import("../sections/FeaturedShowcase2")
+);
+const FeaturedShowcase3 = dynamic(
+  () => import("../sections/FeaturedShowcase3")
+);
 
 const About = dynamic(
   () => import("../sections/About")
@@ -59,14 +65,21 @@ export default function Home() {
       {/* <Hero /> */}
       <VideoHero />
 
-      <FeaturedShowcase />
 
-      <About />
-      <Categories />
+      <FeaturedShowcase2 />
+
+      <FeaturedShowcase3 />
+
+      <FeaturedShowcase />
 
       <FeaturedProjects />
 
+      <Categories />
+
+      <About />
+
       <Contact />
+
       <Footer />
       
     </>
@@ -74,3 +87,11 @@ export default function Home() {
 }
 
 // inline-flex items-center
+
+
+// Turf ,Home the ,modular kit, modular wadrobe. Add GST no, Expe , city name
+
+
+// git add .   
+// git commit -m "Updated contact page"
+// git push

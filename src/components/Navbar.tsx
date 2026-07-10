@@ -15,10 +15,10 @@ import useNavbar from "../hooks/useNavbar";
 
 const navItems = [
   { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Categories", href: "/#categories" },
   { label: "Projects", href: "/#projects" },
+  { label: "Categories", href: "/#categories" },
   { label: "Contact", href: "/#contact" },
+  { label: "About", href: "/#about" },
 ];
 
 export default function Navbar() {

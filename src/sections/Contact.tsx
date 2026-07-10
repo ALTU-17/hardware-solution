@@ -6,12 +6,15 @@ import {
     MapPin,
     MessageCircle,
     MessageSquare,
-    ArrowRight
+    ArrowRight,
+    Video,
+    PhoneCall
 } from "lucide-react";
 
 import Container from "../components/ui/Container";
 import Section from "../components/ui/Section";
 import Button from "../components/ui/Button";
+import { BsInstagram } from "react-icons/bs";
 
 export default function Contact() {
 
@@ -51,37 +54,59 @@ export default function Contact() {
                         </p>
                     </div>
 
-                    {/* Right */}
-                    <div className="mt-12 space-y-8">
-                        <InfoCard
-                            icon={<Phone size={22} />}
-                            title="Call Us"
-                            value="+91 97302 36100"
-                            href="tel:+919730236100"
-                        />
+                  {/* Right */}
+<div className="mt-12 space-y-8">
+    {/* Two Phone Numbers Side by Side */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <InfoCard
+            icon={<Phone size={22} />}
+            title="Call Us"
+            value="+91 97302 36100"
+            href="tel:+919730236100"
+        />
+        <InfoCard
+            icon={<PhoneCall size={22} />}
+            title="Call Us"
+            value="+91 86248 48468"
+            href="tel:+918624848468"
+        />
+    </div>
 
-                        <InfoCard
-                            icon={<Mail size={22} />}
-                            title="Email"
-                            value="hardwaresolution34@gmail.com"
-                            href="mailto:hardwaresolution34@gmail.com"
-                        />
+   
 
-                        <InfoCard
-                            icon={<MessageCircle size={22} />}
-                            title="WhatsApp"
-                            value="Start a Conversation"
-                            href="https://wa.me/919730236100"
-                        />
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <InfoCard
+        icon={<MessageCircle size={22} />}
+        title="WhatsApp"
+        value="Start a Conversation"
+        href="https://wa.me/919730236100"
+    />
+    
+    <InfoCard
+        icon={<BsInstagram size={22} />}
+        title="Instagram"
+        value="Follow for latest designs & projects"
+        href="https://www.instagram.com/hardwaresolution173?igsh=MTN1ampyOXc4YTFiNw=="
+    /> </div>
+ <InfoCard
+        icon={<Mail size={22} />}
+        title="Email"
+        value="hardwaresolution34@gmail.com"
+        href="mailto:hardwaresolution34@gmail.com"
+    />
+    
 
-                        <InfoCard
-                            icon={<MapPin size={22} />}
-                            title="Location"
-                            value="Aurangabad, Maharashtra"
-                            href={null}
-                        />
+    <InfoCard
+        icon={<MapPin size={22} />}
+        title="Location"
+        value="Sant Eknath Housing Society,
+          Kailash Nagar, Mondha,
+          Chhatrapati Sambhajinagar (Aurangabad) Maharashtra 431001"
+        href={null}
+    />
+</div>
                     </div>
-                </div>
 
                 {/* Bottom Layout: Centered Why Hardware Solution Section */}
                 <div className="mt-20 border-t border-gray-800 pt-16">
@@ -93,7 +118,7 @@ export default function Contact() {
                         {/* Feature 1 */}
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-[#C89B3C]/30 transition duration-300">
                             <div className="text-[#C89B3C] text-3xl font-black mb-4">
-                                10+
+                                20+
                             </div>
                             <div>
                                 <h4 className="text-white font-semibold text-lg">Years of Architectural Excellence</h4>
