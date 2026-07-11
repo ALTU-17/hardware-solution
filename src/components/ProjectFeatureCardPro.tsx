@@ -1,148 +1,159 @@
+// components/ProjectFeatureCardPro.tsx
 "use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, Pause } from "lucide-react";
+import { useRef, useState } from "react";
 import Button from "./ui/Button";
 
-interface Props {
-  image?: string;  // Made optional
-  video?: string;  // Added video prop
+interface Feature {
+  label: string;
+  value: string;
 }
 
-export default function ProjectFeatureCardPro({ image, video }: Props) {
+interface Props {
+  tag?: string;
+  title: string;
+  description: string;
+  features: Feature[];
+  image?: string;
+  video?: string;
+  reverse?: boolean;
+}
+
+export default function ProjectFeatureCardPro({ 
+  tag = "Featured Project", 
+  title, 
+  description, 
+  features, 
+  image, 
+  video, 
+  reverse = false 
+}: Props) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Explicitly handles play/pause action
+  const togglePlay = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevents background wrapper triggers
+    if (!videoRef.current) return;
+    
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
   return (
-    <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <div className="grid lg:grid-cols-2 gap-16 items-center my-24">
 
-      {/* Media - Image or Video */}
+      {/* Text Details Panel */}
       <motion.div
-        initial={{ opacity: 0, x: 80 }}
+        initial={{ opacity: 0, x: reverse ? 80 : -80 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: .8 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
+        className={reverse ? "lg:order-2" : "lg:order-1"}
       >
-
-        <p className="uppercase tracking-[8px] text-[#C89B3C] text-sm">
-          Featured Project
+        <p className="uppercase tracking-[8px] text-[#C89B3C] text-sm font-semibold">
+          {tag}
         </p>
 
-        <h2 className="text-5xl font-black mt-6">
-          Architectural Gold Sliding System
+        <h2 className="text-4xl md:text-5xl font-black mt-6 uppercase tracking-tight text-white leading-tight">
+          {title}
         </h2>
 
-        <p className="mt-8 text-gray-400 leading-8">
-         Transform your interior boundaries with our bespoke, ultra-slim gold aluminium sliding systems—engineered for silent operation and timeless visual elegance.
+        <p className="mt-6 text-gray-400 leading-8 text-lg">
+          {description}
         </p>
 
-        <div className="grid grid-cols-2 gap-8 mt-10">
-
-          <div>
-            <h4 className="text-[#C89B3C] font-semibold">
-              Material
-            </h4>
-
-            <p className="text-gray-400 mt-2">
-              Structural Lightweight Aluminium
-            </p>
-          </div>
-
-          <div>
-            <h4 className="text-[#C89B3C] font-semibold">
-              Glass
-            </h4>
-
-            <p className="text-gray-400 mt-2">
-              Fluted Textured Safety Glass
-            </p>
-          </div>
-
-          <div>
-            <h4 className="text-[#C89B3C] font-semibold">
-              Finish
-            </h4>
-
-            <p className="text-gray-400 mt-2">
-              UV-Resistant Gold Coating
-            </p>
-          </div>
-
-          <div>
-            <h4 className="text-[#C89B3C] font-semibold">
-              Installation
-            </h4>
-
-            <p className="text-gray-400 mt-2">
-              Hardware Solution
-            </p>
-          </div>
-
+        {/* Dynamic Spec Grid */}
+        <div className="grid grid-cols-2 gap-8 mt-10 border-t border-white/10 pt-8">
+          {features.map((feature, idx) => (
+            <div key={idx}>
+              <h4 className="text-[#C89B3C] font-semibold text-sm uppercase tracking-wider">
+                {feature.label}
+              </h4>
+              <p className="text-gray-300 mt-2 text-base">
+                {feature.value}
+              </p>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-12">
-
-          {/* <Button>
-
+        {/* Call to Action Button */}
+        {/* <div className="mt-10">
+          <Button variant="gold">
             <span className="flex items-center gap-3">
-
-              Explore Project
-
-              <ArrowRight size={18}/>
-
-            </span> */}
-
-          {/* </Button> */}
-
-        </div>
-
+              Explore Specifications
+              <ArrowRight size={18} />
+            </span>
+          </Button>
+        </div> */}
       </motion.div>
 
-
-      {/* Details - Rest of your code remains the same */}
+      {/* Media Player Panel */}
       <motion.div
-        initial={{ opacity: 0, x: -80 }}
+        initial={{ opacity: 0, x: reverse ? -80 : 80 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: .8 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-20"
+        className={`relative overflow-hidden rounded-[32px] bg-black border border-white/5 shadow-2xl group ${
+          reverse ? "lg:order-1" : "lg:order-2"
+        }`}
       >
-     <p className="uppercase tracking-[8px] text-[#C89B3C] text-sm">
-            ****
-          </p>
-          <p className="uppercase tracking-[8px] text-[#C89B3C] text-sm">
-            ***
-          </p>
-          <p className="uppercase tracking-[8px] text-[#C89B3C] text-sm">
-            ****
-          </p>
-        <div className="overflow-hidden rounded-[32px]">
-
-          {video ? (
-            // Video player
+        {video ? (
+          <div className="relative w-full h-[650px] bg-neutral-950 flex items-center justify-center">
             <video
+              ref={videoRef}
               src={video}
-              autoPlay
               loop
               muted
               playsInline
-              className="w-full h-[700px] object-cover hover:scale-100 transition duration-700"
+              // Allowing clicking directly on the video to pause only once it is already playing
+              onClick={isPlaying ? togglePlay : undefined} 
+              className={`w-full h-full transition-all duration-500 ${
+                isPlaying ? "object-contain" : "object-cover"
+              }`} /* ⬅️ Switches cleanly to actual uncropped form aspect ratio on play */
             />
-          ) : image ? (
-            // Image fallback
-            <Image
-              src={image}
-              alt="Featured Project"
-              width={900}
-              height={1200}
-              className="w-full h-[600px] object-cover hover:scale-105 transition duration-700"
-            />
-          ) : null}
-
-        </div>
-
+            
+            {/* Control UI Overlay Layer */}
+            <div 
+              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+                isPlaying ? "opacity-0 hover:opacity-100 bg-black/20" : "opacity-100 bg-black/10"
+              }`}
+            >
+              {/* Play / Pause Trigger Action is strictly isolated to this button element */}
+              <motion.button
+                type="button"
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={togglePlay}
+                className="w-20 h-20 flex items-center justify-center rounded-full bg-black/70 border border-[#C89B3C] backdrop-blur-md text-[#C89B3C] shadow-2xl cursor-pointer z-20"
+              >
+                {isPlaying ? (
+                  <Pause size={28} fill="#C89B3C" />
+                ) : (
+                  <Play size={28} fill="#C89B3C" className="ml-1" />
+                )}
+              </motion.button>
+            </div>
+          </div>
+        ) : image ? (
+          <Image
+            src={image}
+            alt={title}
+            width={1200}
+            height={1200}
+            className="w-full h-[650px] object-cover transition duration-700 hover:scale-105"
+          />
+        ) : null}
       </motion.div>
-
 
     </div>
   );
 }
-
