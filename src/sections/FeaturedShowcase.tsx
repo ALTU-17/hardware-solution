@@ -21,18 +21,18 @@ export default function FeaturedShowcase() {
 
         <ProjectFCard
           video="/videos/sliding2.mp4"
-          video2="/Projectvid/sliding_glassdoor_sitingarea_partition.mp4"  
+          video2="/videos/sliding_glassdoor_sitingarea_partition.mkv"  
         />
 
       </Container>
+
       <Container>
 
         <ProjectFeatureCardPro
-          video="/Projectvid/persnol_space_glass_sliding_room_partition_wnew.mp4"
+          video="/videos/persnol_space.mp4"
         />
 
       </Container>
-
 
     </Section>
 

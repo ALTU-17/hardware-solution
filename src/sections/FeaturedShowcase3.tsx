@@ -20,6 +20,10 @@ export default function FeaturedShowcase3() {
           videos={[
             "/projectvid/modern_bathrrom.mp4",
             "/projectvid/glass_sliding_room_partition.mp4",
+            "/projectvid/shower.mp4",
+            // "/Projectvid/sliding_glassdoor_sitingarea_partition.mp4",
+            // "/Projectvid/persnol_space.mp4",
+
             "/projectvid/paintingframe_style_sliding_glassdoor.mp4",
             "/projectvid/2in1_sliding_glassdoor.mp4",
             "/projectvid/glass_sliding_room.mp4",
