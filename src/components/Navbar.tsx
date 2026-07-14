@@ -15,8 +15,8 @@ import useNavbar from "../hooks/useNavbar";
 
 const navItems = [
   { label: "Home", href: "/#home" },
-  { label: "Projects", href: "/#projects" },
   { label: "Categories", href: "/#categories" },
+  { label: "Projects", href: "/#projects" },
   { label: "Contact", href: "/#contact" },
   { label: "About", href: "/#about" },
 ];

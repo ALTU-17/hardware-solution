@@ -35,7 +35,7 @@ export default function FeaturedShowcase() {
       <Container>
         <ProjectFCard
           video="/videos/sliding2.mp4"
-          video2="/videos/sliding_glassdoor_sitingarea_partition.mkv"  
+          video2="/videos/public_videos_sliding_glassdoor_sitingarea_partition.mkv"  
         />
       </Container>
 

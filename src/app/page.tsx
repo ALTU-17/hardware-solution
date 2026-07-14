@@ -8,6 +8,7 @@ import SmoothScroll from "../components/SmoothScroll";
 import Projects from "../sections/Projects";
 import VideoHero from "../components/VideoHero";
 
+
 // import FeaturedShowcase from "../sections/FeaturedShowcase";
 
 
@@ -65,6 +66,8 @@ export default function Home() {
       {/* <Hero /> */}
       <VideoHero />
 
+      <Categories />
+
 
       <FeaturedShowcase2 />
 
@@ -73,8 +76,6 @@ export default function Home() {
       <FeaturedShowcase />
 
       <FeaturedProjects />
-
-      <Categories />
 
       <About />
 
